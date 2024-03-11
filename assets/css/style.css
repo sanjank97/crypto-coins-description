@@ -1,0 +1,119 @@
+
+.crypto-description-cointainer .head-btn-wrapper {
+    display: flex;
+    place-content: space-between;
+    margin: 28px 14px;
+}
+.crypto-description-cointainer .head-btn-wrapper .sync-btn-warpper button {
+    padding: 10px 20px;
+	background: #2185d0;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+}
+.crypto-description-cointainer .head-btn-wrapper .search-coin-field input {
+    padding:5px;
+}
+
+.crypto-description-cointainer table { 
+	width: 100%; 
+	border-collapse: collapse; 
+	margin:10px auto;
+	}
+
+/* Zebra striping */
+.crypto-description-cointainer tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+.crypto-description-cointainer th { 
+	background: #3498db; 
+	color: white; 
+	/* font-weight: bold;  */
+	}
+
+.crypto-description-cointainer td, .crypto-description-cointainer th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	/* font-size: 18px; */
+	}
+	.crypto-description-cointainer .get_description, .crypto-description-cointainer .update_description  {
+	padding: 8px 12px;
+    background: #2185d0;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+	cursor: pointer;
+}
+.crypto-description-cointainer .pagination {
+	margin-top :40px;
+	text-align: center;
+	display: none;
+}
+.crypto-description-cointainer .pagination a{
+	padding: 10px 14px;
+    background: #2185d0;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 6px;
+}
+.crypto-description-cointainer .pagination .active {
+	background: #4d4de9;
+}
+.crypto-description-cointainer .total_item {
+	text-align: right;
+}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	.crypto-description-cointainer table { 
+	  	width: 100%; 
+	}
+
+	/* Force table to not be like tables anymore */
+	.crypto-description-cointainer table, .crypto-description-cointainer thead, .crypto-description-cointainer tbody, .crypto-description-cointainer th, .crypto-description-cointainer td, .crypto-description-cointainer tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.crypto-description-cointainer thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.crypto-description-cointainer tr { border: 1px solid #ccc; }
+	
+	.crypto-description-cointainer td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+	.crypto-description-cointainer td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		/* Label the data */
+		content: attr(data-column);
+
+		color: #000;
+		font-weight: bold;
+	}
+
+}
